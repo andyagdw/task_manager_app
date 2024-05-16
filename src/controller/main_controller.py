@@ -29,7 +29,7 @@ def start_application() -> None:
 
     match user_choice:
         case 1 | 5 | 6 | 7 | 8:  # Read a task or tasks
-            action = 'read'
+            action = 'view'
             read_task.read_controller(user_choice, tasks, action)
         case 2:  # Create new task
             create_task.create_controller()

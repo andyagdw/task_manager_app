@@ -71,14 +71,6 @@ class DatabaseCreate(DatabaseConnector):
         self.cursor.execute(task_table)
         self.db.commit()
 
-        # category_table = '''CREATE TABLE IF NOT EXISTS category
-        #         (category_id INTEGER PRIMARY KEY AUTOINCREMENT,
-        #         task_id INTEGER,
-        #         category_name TEXT,
-        #         FOREIGN KEY (task_id) REFERENCES task(task_id)
-        #         ON DELETE CASCADE
-        #         ON UPDATE CASCADE
-        #         );'''
         category_table = '''CREATE TABLE IF NOT EXISTS category
                 (task_id INTEGER,
                 category_name TEXT,
@@ -90,14 +82,6 @@ class DatabaseCreate(DatabaseConnector):
         self.cursor.execute(category_table)
         self.db.commit()
 
-        # deadline_table = '''CREATE TABLE IF NOT EXISTS deadline
-        #         (deadline_id INTEGER PRIMARY KEY AUTOINCREMENT,
-        #         task_id INTEGER,
-        #         due_date TEXT,
-        #         FOREIGN KEY (task_id) REFERENCES task(task_id)
-        #         ON DELETE CASCADE
-        #         ON UPDATE CASCADE
-        #         );'''
         deadline_table = '''CREATE TABLE IF NOT EXISTS deadline
                 (task_id INTEGER,
                 due_date TEXT,
@@ -109,14 +93,6 @@ class DatabaseCreate(DatabaseConnector):
         self.cursor.execute(deadline_table)
         self.db.commit()
 
-        # priority_table = '''CREATE TABLE IF NOT EXISTS priority
-        #             (priority_id INTEGER PRIMARY KEY AUTOINCREMENT,
-        #             task_id INTEGER,
-        #             priority INTEGER,
-        #             FOREIGN KEY (task_id) REFERENCES task(task_id)
-        #             ON DELETE CASCADE
-        #             ON UPDATE CASCADE
-        #             );'''
         priority_table = '''CREATE TABLE IF NOT EXISTS priority
                     (task_id INTEGER,
                     priority INTEGER,

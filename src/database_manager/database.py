@@ -5,7 +5,7 @@ with a database'''
 import sqlite3
 from typing import Any
 
-DB_NAME = '../task_manager.db'
+DB_NAME = 'task_manager.db'
 
 
 class DatabaseConnector:

@@ -18,9 +18,9 @@ class DatabaseConnector:
     def __init__(self, db_name) -> None:
         self.db_name = db_name
         self.db = sqlite3.connect(db_name)
-        self.cursor = self.db.cursor()
         # Enable foreign key constraint
-        self.cursor.execute("PRAGMA foreign_keys = ON;")
+        self.db.execute("PRAGMA foreign_keys = ON;")
+        self.cursor = self.db.cursor()
 
     def task_exists(self) -> None | Any:
         '''Checks if there are tasks in a database

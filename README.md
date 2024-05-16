@@ -83,3 +83,8 @@ user-friendly visual interface. Plus, its free!
    Once the database is opened, you can browse through the tables and data using the intuitive interface of DB Browser 😁.
 
 You're all set! Start managing your tasks efficiently with the Task Manager Application. 🚀
+
+## Credits
+### Contact
+
+If you have any questions or just want to connect, you can reach me on [LinkedIn](https://www.linkedin.com/in/andyagyeidwumah/) 👍.

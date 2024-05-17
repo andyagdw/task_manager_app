@@ -88,3 +88,8 @@ You're all set! Start managing your tasks efficiently with the Task Manager Appl
 ### Contact
 
 If you have any questions or just want to connect, you can reach me on [LinkedIn](https://www.linkedin.com/in/andyagyeidwumah/) 👍.
+
+### Acknowledgements
+
+I would like to extend my gratitude to the mentors at CoGrammar and HyperionDev for their invaluable assistance and guidance throughout
+this project 🙏.

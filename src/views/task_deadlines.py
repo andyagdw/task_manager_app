@@ -47,20 +47,20 @@ def view_deadlines(tasks: Any):
             for task in deadline_tasks:
                 (task_id,
                  title,
-                 description,
-                 category,
+                 _,
+                 _,
                  deadline,
-                 priority) = task
+                 _) = task
                 task_info = (
                     f"\n{constants.TASK_ID_STRING}{task_id}"
                     f"\n{constants.TASK_TITLE_STRING}{title.title()}"
-                    f"\n{constants.TASK_DESCRIPTION_STRING}{description}"
-                    f"\n{constants.TASK_CATEGORY}{category.title()}"
-                    f"\n{constants.TASK_PRIORITY}{priority}"
                     )
                 # Show deadline for dates that are passed or due later
                 if deadline_date in ('Passed Deadline', 'Due Later On'):
-                    print(f'{task_info}{deadline}\n')
+                    print(
+                        f"{task_info}\n{constants.TASK_DEADLINE}"
+                        f"{deadline}\n"
+                        )
                 else:
                     print(task_info)
         else:

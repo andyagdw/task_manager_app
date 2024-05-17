@@ -31,13 +31,10 @@ def view_priorities(tasks: Any):
         print(f"\n********* {priority_str} Priority *********")
         if priority_tasks:  # Check if empty
             for task in priority_tasks:
-                (task_id, title, description, category,
-                 deadline, priority) = task
+                (task_id, title, _, _,
+                 _, priority) = task
                 print(f"\n{constants.TASK_ID_STRING}{task_id}"
                       f"\n{constants.TASK_TITLE_STRING}{title.title()}"
-                      f"\n{constants.TASK_DESCRIPTION_STRING}{description}"
-                      f"\n{constants.TASK_CATEGORY}{category.title()}"
-                      f"\n{constants.TASK_DEADLINE}{deadline}"
                       )
         else:
             print("No task with this priority\n")

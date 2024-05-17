@@ -21,11 +21,8 @@ def view_categories(tasks: Any):
     for category_name, category_tasks in categories_dict.items():
         print(f"\n*********** {category_name.title()} ***********")
         for task in category_tasks:
-            task_id, title, description, _, deadline, priority = task
+            task_id, title, _, _, _, _ = task
             print(
                 f"\n{constants.TASK_ID_STRING}{task_id}"
                 f"\n{constants.TASK_TITLE_STRING}{title.title()}"
-                f"\n{constants.TASK_DESCRIPTION_STRING}{description}"
-                f"\n{constants.TASK_DEADLINE}{deadline}"
-                f"\n{constants.TASK_PRIORITY}{priority}"
                 )

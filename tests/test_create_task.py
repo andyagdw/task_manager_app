@@ -59,12 +59,12 @@ class TestCreateTask(unittest.TestCase):
         task_id, title, description, category, deadline, priority = task
         # Check if task was committed to database and if task
         # information was inserted correctly
-        self.assertEqual(task_id, 1)
-        self.assertEqual(title, "Coding")
-        self.assertEqual(description, "Submit task 1")
-        self.assertEqual(category, "personal")
-        self.assertEqual(deadline, str(util.full_date()))
-        self.assertEqual(priority, 1)
+        self.assertTrue(task_id == 1)
+        self.assertTrue(title == "Coding")
+        self.assertTrue(description == "Submit task 1")
+        self.assertTrue(category == "personal")
+        self.assertTrue(deadline == str(util.full_date()))
+        self.assertTrue(priority == 1)
 
 
 # Invoke unit test framework

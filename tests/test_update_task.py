@@ -1,6 +1,7 @@
 '''Unit testing the use case: update task'''
 
 import unittest  # Built in testing framework
+import datetime
 from util import util
 from model import model
 from database_manager import database
@@ -21,6 +22,9 @@ class TestUpdateTask(unittest.TestCase):
         # Task id is 1 as this is the first record which will be created
         # in the database
         self.task_id = 1
+        self.current_date = util.full_date()
+        self.date_in_two_weeks_time = (
+            self.current_date + datetime.timedelta(weeks=2))
         self.database_name = 'test_task_manager.db'
         database.DatabaseCreate(self.database_name).create_tables()
 
@@ -43,12 +47,11 @@ class TestUpdateTask(unittest.TestCase):
         Tests if updating a task is successful
         '''
         # Create task
-        current_date = util.full_date()
         create_task = model.create_task([
             "Coding",
             "Submit task 1",
             "personal",
-            current_date,
+            self.current_date,
             1
         ])
         # Add to database
@@ -69,18 +72,16 @@ class TestUpdateTask(unittest.TestCase):
         self.assertTrue(title1 == "Coding")
         self.assertTrue(description1 == "Submit task 1")
         self.assertTrue(category1 == "personal")
-        self.assertTrue(deadline1 == str(current_date))
+        self.assertTrue(deadline1 == str(self.current_date))
         self.assertTrue(priority1 == 1)
 
         # Update task
-        new_date = util.dmy_to_datetime_date('01-01-2030')
-
         (database.DatabaseUpdate(self.database_name)
          .update_task(self.task_id, [
              "Bootcamp",
              "Submit all tasks",
              "coding",
-             new_date,
+             self.date_in_two_weeks_time,
              2
          ]))
 
@@ -99,7 +100,7 @@ class TestUpdateTask(unittest.TestCase):
         self.assertTrue(title2 == "Bootcamp")
         self.assertTrue(description2 == "Submit all tasks")
         self.assertTrue(category2 == "coding")
-        self.assertTrue(deadline2 == str(new_date))
+        self.assertTrue(deadline2 == str(self.date_in_two_weeks_time))
         self.assertTrue(priority2 == 2)
 
 

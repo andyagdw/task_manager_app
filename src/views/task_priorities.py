@@ -20,7 +20,7 @@ def view_priorities(tasks: Any):
     priorities_dict = {1: [], 2: [], 3: []}
 
     for value in tasks:
-        *_, priority = value  # Retrieve only priority
+        *_, priority = value  # Retrieve only the priority
         priorities_dict[priority].append(value)
 
     for priority_key, priority_tasks in priorities_dict.items():

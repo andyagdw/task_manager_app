@@ -1,6 +1,7 @@
-'''This module contains the controller (i.e., the start_application
-function). It recieves user input from the views, interacts with the
-models to process the input, and updates the views accordingly.
+'''This module contains the main controller (i.e., the start_application
+function). It takes in the users choice (an action they would like to
+perform on a task) and sends it to the controller responsible for that
+action
 '''
 from controller import (remove_task,
                         update_task,
@@ -14,7 +15,7 @@ from database_manager import database
 def start_application() -> None:
     '''
     The main controller. Interacts with other controllers and allows a
-    user to perform actions on the tasks list
+    user to perform actions on a task
     '''
     # Create the necessary tables if they don't exist
     database.DatabaseCreate(database.DB_NAME).create_tables()
@@ -28,7 +29,7 @@ def start_application() -> None:
         return start_application()
 
     match user_choice:
-        case 1 | 5 | 6 | 7 | 8:  # Read a task or tasks
+        case 1 | 5 | 6 | 7 | 8:  # Read task(s)
             action = 'view'
             read_task.read_controller(user_choice, tasks, action)
         case 2:  # Create new task

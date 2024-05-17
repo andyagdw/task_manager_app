@@ -18,7 +18,8 @@ class TestUpdateTask(unittest.TestCase):
         Establishes a connection to a database and creates the necessary
         tables
         '''
-        # Task id is 1 as this is the first record in database
+        # Task id is 1 as this is the first record which will be created
+        # in the database
         self.task_id = 1
         self.database_name = 'test_task_manager.db'
         database.DatabaseCreate(self.database_name).create_tables()
@@ -29,10 +30,10 @@ class TestUpdateTask(unittest.TestCase):
          .remove_task(self.task_id))
         conn = database.DatabaseConnector(self.database_name)
 
-        conn.cursor.execute('''DROP TABLE IF EXISTS task''')
-        conn.cursor.execute('''DROP TABLE IF EXISTS category''')
-        conn.cursor.execute('''DROP TABLE IF EXISTS deadline''')
-        conn.cursor.execute('''DROP TABLE IF EXISTS priority''')
+        conn.cursor.execute('''DROP TABLE IF EXISTS task;''')
+        conn.cursor.execute('''DROP TABLE IF EXISTS category;''')
+        conn.cursor.execute('''DROP TABLE IF EXISTS deadline;''')
+        conn.cursor.execute('''DROP TABLE IF EXISTS priority;''')
 
         conn.db.commit()
         conn.db.close()

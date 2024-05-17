@@ -1,4 +1,4 @@
-'''Performs a CRUD operation: remove task'''
+'''Responsible for the CRUD operation: remove task'''
 
 from typing import Any
 from views import get_task_id
@@ -11,8 +11,8 @@ def remove_controller(tasks: Any, action: str) -> None:
     Controller for removing a task
 
     Takes in:
-    1) tasks - Tasks from a database, if any
-    2) action - Action a user wants to perform stored as a string
+    1) tasks - Tasks from the database, if any
+    2) action - Action a user wants to perform, stored as a string
     '''
     if tasks:
         try:

@@ -1,4 +1,4 @@
-'''Performs a CRUD operation: create task'''
+'''Responsible for the CRUD operation: create task'''
 
 from views import create_task
 from model import model
@@ -7,7 +7,7 @@ from database_manager import database
 
 
 def create_controller() -> None:
-    '''Controller for creating a task'''
+    '''Controller responsible for creating a task'''
     try:
         # Returns task information
         task_info = create_task.get_task_information()

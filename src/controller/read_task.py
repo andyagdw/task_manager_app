@@ -1,4 +1,4 @@
-'''Performs a CRUD operation: read task'''
+'''Responsible for the CRUD operation: read task'''
 
 from typing import Any
 from views import (all_tasks,
@@ -16,22 +16,22 @@ def read_controller(user_choice: int, tasks: Any, action: str) -> None:
     Controller for reading a task or many tasks
 
     Takes in:
-    1) user_choice - Action a user wants to perform stored as an integer
-    2) tasks - Tasks from a database, if any
-    3) action - Action a user wants to perform stored as a string
+    1) user_choice - Action a user wants to perform,
+    stored as an integer
+    2) tasks - Tasks from the database, if any
+    3) action - Action a user wants to perform, stored as a string
     '''
     match user_choice:
         case 1:  # View tasks
-            # Check if there are tasks in the tasks list
+            # Check if there are tasks
             if tasks:
-                _tasks_ = (
+                tasks_from_db = (
                     database.DatabaseRetrieve(database.DB_NAME)
                     .get_tasks()
                     )
-                all_tasks.view_tasks(_tasks_)
+                all_tasks.view_tasks(tasks_from_db)
                 return None
             else:
-                # Informs the user that there are no tasks
                 communications.no_tasks()
                 return None
         case 5:  # View a task

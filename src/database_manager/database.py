@@ -1,6 +1,7 @@
 '''
 Database module - contains classes and functions, which interact
-with a database'''
+with a database
+'''
 
 import sqlite3
 from typing import Any
@@ -29,7 +30,7 @@ class DatabaseConnector:
         If not, it returns None
         '''
         sql_formula = '''SELECT * FROM task;'''
-        tasks = self.cursor.execute(sql_formula).fetchone()
+        tasks = self.cursor.execute(sql_formula).fetchall()
         if tasks:
             self.db.close()
             return tasks
@@ -177,7 +178,7 @@ class DatabaseRemove(DatabaseConnector):
     '''
     def remove_task(self, task_id: int) -> None:
         '''Removes a task from the database'''
-        delete_task_formula = '''DELETE FROM task WHERE task_id=?'''
+        delete_task_formula = '''DELETE FROM task WHERE task_id=?;'''
         self.cursor.execute(delete_task_formula, (task_id,))
         self.db.commit()
         self.db.close()
@@ -195,14 +196,15 @@ class DatabaseRetrieve(DatabaseConnector):
     '''
     def get_tasks(self) -> Any:
         '''Retrieves tasks from the database'''
-        retrieve_tasks_formula = '''SELECT * FROM task'''
+        retrieve_tasks_formula = '''SELECT * FROM task;'''
         tasks = self.cursor.execute(retrieve_tasks_formula).fetchall()
         self.db.close()
         return tasks
 
     def get_task(self, task_id: int) -> Any:
         '''Retrieves a task from the database'''
-        retrieve_task_formula = '''SELECT * FROM task WHERE task_id=?'''
+        retrieve_task_formula = '''SELECT * FROM task WHERE task_id=?;
+                                '''
         task = (
             self.cursor.execute(retrieve_task_formula, (task_id,))
             .fetchone())
@@ -227,7 +229,7 @@ class DatabaseUpdate(DatabaseConnector):
                             category=?,
                             deadline=date(?),
                             priority=?
-                            WHERE task_id=?'''
+                            WHERE task_id=?;'''
 
         title, description, category, due_date, priority = new_task_details
         # Convert to string from datetime.date as SQLite date function
@@ -244,7 +246,7 @@ class DatabaseUpdate(DatabaseConnector):
         self.db.commit()
 
         category_formula = '''UPDATE category SET category_name=?
-                            WHERE task_id=?'''
+                            WHERE task_id=?;'''
         self.cursor.execute(category_formula,
                             (category,
                              task_id)
@@ -252,14 +254,14 @@ class DatabaseUpdate(DatabaseConnector):
         self.db.commit()
 
         deadline_formula = '''UPDATE deadline SET due_date=date(?)
-                            WHERE task_id=?'''
+                            WHERE task_id=?;'''
         self.cursor.execute(deadline_formula,
                             (deadline,
                              task_id))
         self.db.commit()
 
         priority_formula = '''UPDATE priority SET priority=?
-                        WHERE task_id=?'''
+                        WHERE task_id=?;'''
         self.cursor.execute(priority_formula,
                             (priority,
                              task_id))

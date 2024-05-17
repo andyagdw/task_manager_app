@@ -20,7 +20,7 @@ def dmy_to_datetime_date(date_string: str) -> datetime.date:
     '''
     Takes in a string in DD-MM-YYYY format:
 
-    Used when retrieving input from user when creating a task.
+    Used when retrieving input from the user when creating a task.
     The input is then converted into <class 'datetime.date'> and the
     date is returned as YYYY-MM-DD
     '''
@@ -30,6 +30,9 @@ def dmy_to_datetime_date(date_string: str) -> datetime.date:
 
 
 def full_date() -> datetime.date:
-    '''Returns the current date in this format: YYYY-MM-DD'''
+    '''
+    Returns the current date as <class 'datetime.date'> in this format:
+    YYYY-MM-DD
+    '''
     todays_date = datetime.date.today()
     return todays_date

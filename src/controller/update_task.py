@@ -1,4 +1,4 @@
-'''Performs a CRUD operation: updating a task'''
+'''Responsible for the CRUD operation: update task'''
 
 from typing import Any
 from views import (get_task_id,
@@ -13,7 +13,7 @@ def update_controller(tasks: Any, action: str) -> None:
 
     Takes in:
     1) tasks - Tasks from a database, if any
-    2) action - Action a user wants to perform stored as a string
+    2) action - Action a user wants to perform, stored as a string
     '''
     if tasks:
         try:

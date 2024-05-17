@@ -1,4 +1,4 @@
-'''A view: displays to the user all tasks'''
+'''A view: Displays to the user all tasks'''
 
 from typing import Any
 from util.constants import constants
@@ -6,7 +6,7 @@ from util.constants import constants
 
 def view_tasks(tasks: Any) -> None:
     '''
-    Takes in tasks (records from a database) and prints out it out
+    Takes in tasks (records from a database) and prints it out
     '''
     print(" ")
 

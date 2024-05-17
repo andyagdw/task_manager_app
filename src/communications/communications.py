@@ -7,20 +7,21 @@ within the application
 def task_added() -> None:
     '''
     Informs the user that the new task that they have created has been
-    successfully added to the tasks list
+    successfully added to the database
     '''
     print("\nTask successfully added👍\n")
 
 
 def task_does_not_exist() -> None:
-    '''Informs the user that a task does not exist'''
+    '''
+    Informs the user that a task does not exist within the database
+    '''
     print("\nTask does not exist\n")
 
 
 def task_removed_successfully() -> None:
     '''
-    Informs the user that a task has been removed from the tasks
-    list
+    Informs the user that a task has been removed from the database
     '''
     print("\nTask has been removed successfully 😁\n")
 
@@ -31,7 +32,7 @@ def task_updated() -> None:
 
 
 def no_tasks() -> None:
-    '''Informs the user that there are no tasks in the tasks list'''
+    '''Informs the user that no tasks has been created yet'''
     print("\nThere are no tasks 😉")
 
 
@@ -48,7 +49,7 @@ def incorrect_input() -> None:
 
 def confirm_choice() -> str:
     '''
-    Gets user choice (to remove a task) from the user and returns
+    Gets user choice (to remove a task) from the database and returns
     this choice to the controller
     '''
     user_choice = input(

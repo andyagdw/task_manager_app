@@ -1,8 +1,4 @@
-'''
-This module contains the models.
-They represent the application's software entities and business logic.
-They get and manipulate data from the database
-'''
+'''This module contains the models.'''
 
 import datetime
 from typing import Any
@@ -47,8 +43,6 @@ class Deadline:
 class Task:
     '''A class to represent a task'''
 
-    # current_task_id = 1
-
     def __init__(self,
                  title: str,
                  description: str,
@@ -62,13 +56,9 @@ class Task:
         self.deadline = deadline
         self.priority_id = priority_id
 
-        # self.task_id = Task.current_task_id
-        # Task.current_task_id += 1
-
     def __str__(self) -> str:
         '''Returns all the information about a task'''
         return (
-            # f"Task Id: {self.task_id}\n"
             f"Title: {self.title}\n"
             f"Description: {self.description}\n"
             f"{self.category}\n"

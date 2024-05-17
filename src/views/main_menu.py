@@ -1,12 +1,12 @@
 '''
 A view: Displays the main menu where a user can select an option
-to perform on the tasks list
+to perform on a task or all the tasks
 '''
 
 
 def display_menu() -> int:
     '''
-    Presents a menu to the user to perform actions on tasks list.
+    Presents a menu to the user where they can choose an option.
     It returns an integer (representing the users choice) to the
     controller
     '''

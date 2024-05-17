@@ -1,5 +1,5 @@
 '''
-A view: displays to the user an interface where they can create
+A view: Displays to the user an interface where they can create
 a task
 '''
 

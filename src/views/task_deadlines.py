@@ -14,10 +14,10 @@ def view_deadlines(tasks: Any):
 
     The deadline dates are:
 
-    Passed Deadline
-    Due Today
-    Due Tomorrow
-    Due Later On
+    1. Passed Deadline
+    2. Due Today
+    3. Due Tomorrow
+    4. Due Later On
     '''
     deadlines_dict = {"Passed Deadline": [],
                       "Due Today": [],
@@ -29,7 +29,7 @@ def view_deadlines(tasks: Any):
     tomorrow = today + datetime.timedelta(days=1)
 
     for task in tasks:
-        # Retrieve the deadline
+        # Retrieve only the deadline
         _, _, _, _, due_date, _ = task
         deadline = util.ymd_to_datetime_date(due_date)
         if deadline < today:

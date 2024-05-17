@@ -7,7 +7,7 @@ from communications import communications
 from database_manager import database
 
 
-def update_controller(tasks: Any, action: str) -> None:
+def update_controller(tasks: Any, action: str, new: bool) -> None:
     '''
     Controller for updating a task
 
@@ -27,7 +27,7 @@ def update_controller(tasks: Any, action: str) -> None:
         )
         if task_to_be_updated is not None:
             try:
-                new_task_details = create_task.get_task_information()
+                new_task_details = create_task.get_task_information(new)
             # Catch incorrect inputs
             except ValueError:
                 communications.incorrect_input()

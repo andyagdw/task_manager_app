@@ -6,21 +6,24 @@ a task
 from util import util
 
 
-def get_task_information() -> list:
+def get_task_information(new: bool = False) -> list:
     '''
     Returns a list containing task information (e.g., task title,
     task description) to the controller
     '''
+    new_task_str = ' new ' if new is True else ' '
     while True:
-        task_title = input("\nWhat is the task title:\n")
-        task_description = input("What is the task description:\n")
+        task_title = input(f"\nWhat is the{new_task_str}task title:\n")
+        task_description = input(
+            f"What is the{new_task_str}task description:\n"
+            )
         task_category = input(
             "What category do you want to put this task in:\n"
             )
 
         task_date = input(
-            "When is the deadline (Please enter in this format: "
-            f"'01-1-{util.full_date().year}', as in day-month-year)\n"
+            f"When is the{new_task_str}deadline (Please enter in this "
+            f"format '01-1-{util.full_date().year}', as in day-month-year)\n"
             "\tNote: Please ensure that the deadline entered starts "
             "from today onwards:\n"
             )
@@ -33,7 +36,7 @@ def get_task_information() -> list:
             continue
 
         task_priority = int(input(
-            "What is the priority level"
+            f"What is the{new_task_str}priority level"
             "\n(1 = High Priority, "
             "2 = Medium Priority, "
             "3 = Low Priority):\n")

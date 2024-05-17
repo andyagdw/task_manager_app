@@ -59,7 +59,7 @@ def view_deadlines(tasks: Any):
                     f"\n{constants.TASK_PRIORITY}{priority}"
                     )
                 # Show deadline for dates that are passed or due later
-                if deadline_date in ('Passed deadline', 'Later on'):
+                if deadline_date in ('Passed Deadline', 'Later on'):
                     print(f'{task_info}{deadline}\n')
                 else:
                     print(task_info)

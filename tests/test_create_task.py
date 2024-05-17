@@ -21,6 +21,7 @@ class TestCreateTask(unittest.TestCase):
         # Task id is 1 as this is the first record which will be created
         # in the database
         self.task_id = 1
+        self.current_date = util.full_date()
         self.database_name = 'test_task_manager.db'
         database.DatabaseCreate(self.database_name).create_tables()
 
@@ -47,23 +48,23 @@ class TestCreateTask(unittest.TestCase):
             "Coding",
             "Submit task 1",
             "personal",
-            util.full_date(),
+            self.current_date,
             1
         ])
         # Add to database
         database.DatabaseCreate(self.database_name).add_task(create_task)
         # Get task
-        task = (database.DatabaseRetrieve(self.database_name)
+        task1 = (database.DatabaseRetrieve(self.database_name)
                 .get_task(self.task_id))
 
-        task_id, title, description, category, deadline, priority = task
+        task_id, title, description, category, deadline, priority = task1
         # Check if task was committed to database and if task
         # information was inserted correctly
         self.assertTrue(task_id == 1)
         self.assertTrue(title == "Coding")
         self.assertTrue(description == "Submit task 1")
         self.assertTrue(category == "personal")
-        self.assertTrue(deadline == str(util.full_date()))
+        self.assertTrue(deadline == str(self.current_date))
         self.assertTrue(priority == 1)
 
 

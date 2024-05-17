@@ -60,11 +60,11 @@ class TestRemoveTask(unittest.TestCase):
         (database.DatabaseRemove(self.database_name)
          .remove_task(self.task_id))
         # Check if task has been deleted from database
-        task2 = (
+        task1_removed = (
             database.DatabaseRetrieve(self.database_name)
             .get_task(self.task_id)
         )
-        self.assertIsNone(task2)
+        self.assertIsNone(task1_removed)
 
 
 # Invoke unit test framework

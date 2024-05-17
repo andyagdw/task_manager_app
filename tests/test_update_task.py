@@ -58,14 +58,14 @@ class TestUpdateTask(unittest.TestCase):
         database.DatabaseCreate(self.database_name).add_task(create_task)
 
         # Get task
-        current_task = (database.DatabaseRetrieve(self.database_name)
+        task1 = (database.DatabaseRetrieve(self.database_name)
                         .get_task(self.task_id))
         (task_id1,
          title1,
          description1,
          category1,
          deadline1,
-         priority1) = current_task
+         priority1) = task1
 
         # Check if task has been inserted correctly
         self.assertTrue(task_id1 == self.task_id)
@@ -86,14 +86,14 @@ class TestUpdateTask(unittest.TestCase):
          ]))
 
         # Get task
-        new_task = (database.DatabaseRetrieve(self.database_name)
+        task1_updated = (database.DatabaseRetrieve(self.database_name)
                     .get_task(self.task_id))
         (task_id2,
          title2,
          description2,
          category2,
          deadline2,
-         priority2) = new_task
+         priority2) = task1_updated
 
         # Check if task has been updated
         self.assertTrue(task_id2 == self.task_id)

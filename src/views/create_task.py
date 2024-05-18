@@ -6,12 +6,16 @@ a task
 from util import util
 
 
-def get_task_information(new: bool = False) -> list:
+def get_task_information(update_current_task: bool = False) -> list:
     '''
     Returns a list containing task information (e.g., task title,
     task description) to the controller
+    
+    Takes in:
+    1) update_current_task - The boolean value 'True', meaning that the
+    user wants to update a task
     '''
-    new_task_str = ' new ' if new is True else ' '
+    new_task_str = ' new ' if update_current_task is True else ' '
     while True:
         task_title = input(f"\nWhat is the{new_task_str}task title:\n")
         task_description = input(
@@ -23,8 +27,8 @@ def get_task_information(new: bool = False) -> list:
 
         task_date = input(
             f"When is the{new_task_str}deadline (Please enter in this "
-            f"format '01-1-{util.full_date().year}', as in day-month-year)\n"
-            "\tNote: Please ensure that the deadline entered starts "
+            f"format '01-1-{util.full_date().year}', as in day-month-year)"
+            "\n\tNote: Please ensure that the deadline entered starts "
             "from today onwards:\n"
             )
         task_deadline = util.dmy_to_datetime_date(task_date)

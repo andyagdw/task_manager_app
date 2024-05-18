@@ -39,8 +39,8 @@ def start_application() -> None:
             remove_task.remove_controller(tasks, action)
         case 4:  # Update a task
             action = 'update'
-            new = True
-            update_task.update_controller(tasks, action, new)
+            update_current_task = True
+            update_task.update_controller(tasks, action, update_current_task)
         case 9:  # Exit application
             communications.exit_application()
             return None

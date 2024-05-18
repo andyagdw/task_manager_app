@@ -7,13 +7,18 @@ from communications import communications
 from database_manager import database
 
 
-def update_controller(tasks: Any, action: str, new: bool) -> None:
+def update_controller(tasks: Any,
+                      action: str,
+                      update_current_task: bool
+                      ) -> None:
     '''
     Controller for updating a task
 
     Takes in:
     1) tasks - Tasks from a database, if any
     2) action - Action a user wants to perform, stored as a string
+    3) update_current_task - The boolean value 'True', meaning that the
+    user wants to update a task
     '''
     if tasks:
         try:
@@ -27,7 +32,9 @@ def update_controller(tasks: Any, action: str, new: bool) -> None:
         )
         if task_to_be_updated is not None:
             try:
-                new_task_details = create_task.get_task_information(new)
+                new_task_details = (
+                    create_task.get_task_information(update_current_task)
+                    )
             # Catch incorrect inputs
             except ValueError:
                 communications.incorrect_input()

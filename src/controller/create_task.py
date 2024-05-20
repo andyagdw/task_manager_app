@@ -8,9 +8,11 @@ from database_manager import database
 
 def create_controller() -> None:
     '''Controller responsible for creating a task'''
+    task_categories = (database.DatabaseRetrieve(database.DB_NAME)
+                       .get_task_categories())
     try:
         # Returns task information
-        task_info = create_task.get_task_information()
+        task_info = create_task.get_task_information(task_categories)
     # Catch any incorrect inputs
     except ValueError:
         communications.incorrect_input()

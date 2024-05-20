@@ -214,6 +214,25 @@ class DatabaseRetrieve(DatabaseConnector):
         self.db.close()
         return task
 
+    def get_task_categories(self) -> list:
+        '''
+        Retrieves task categories from the database and returns
+        a unique list
+        '''
+        retrieve_task_categories_formula = '''
+                                SELECT DISTINCT category FROM task
+                                ORDER BY category;
+                                '''
+        task_categories = (self.cursor
+                           .execute(retrieve_task_categories_formula)
+                           .fetchall())
+        category_list = []
+        for task in task_categories:
+            category, = task
+            category_list.append(category)
+        self.db.close()
+        return category_list
+
 
 class DatabaseUpdate(DatabaseConnector):
     '''

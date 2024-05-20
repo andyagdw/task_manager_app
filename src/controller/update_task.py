@@ -31,9 +31,13 @@ def update_controller(tasks: Any,
             database.DatabaseRetrieve(database.DB_NAME).get_task(task_id)
         )
         if task_to_be_updated is not None:
+            task_categories = (database.DatabaseRetrieve(database.DB_NAME)
+                               .get_task_categories())
             try:
                 new_task_details = (
-                    create_task.get_task_information(update_current_task)
+                    create_task
+                    .get_task_information(task_categories,
+                                          update_current_task)
                     )
             # Catch incorrect inputs
             except ValueError:

@@ -31,7 +31,7 @@ def view_deadlines(tasks: Any):
     for task in tasks:
         # Retrieve only the deadline
         _, _, _, _, due_date, _ = task
-        deadline = util.ymd_to_datetime_date(due_date)
+        deadline = util.DateUtils().ymd_to_datetime_date(due_date)
         if deadline < today:
             deadlines_dict["Passed Deadline"].append(task)
         elif deadline == today:

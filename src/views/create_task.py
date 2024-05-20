@@ -27,12 +27,12 @@ def get_task_information(update_current_task: bool = False) -> list:
 
         task_date = input(
             f"When is the{new_task_str}deadline (Please enter in this "
-            f"format '01-1-{util.full_date().year}', as in day-month-year)"
-            "\n\tNote: Please ensure that the deadline entered starts "
+            f"format 'DD-MM-YYYY', as in day-month-year)\n\tNote: "
+            "Please ensure that the deadline entered starts "
             "from today onwards:\n"
             )
-        task_deadline = util.dmy_to_datetime_date(task_date)
-        if task_deadline < util.full_date():
+        task_deadline = util.DateUtils().dmy_to_datetime_date(task_date)
+        if task_deadline < util.DateUtils().full_date():
             print(
                 "\nOops🤔. Please enter a deadline that starts "
                 "from today onwards"

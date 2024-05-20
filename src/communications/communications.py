@@ -53,7 +53,9 @@ def confirm_choice() -> str:
     this choice to the controller
     '''
     user_choice = input(
-            "Are you sure you want to remove this task? 'Y' or 'N':\n"
+            "Are you sure you want to remove this task? 'Yes' or 'No'"
+            "\t(Please note that tasks cannot be retrieved once deleted)"
+            ":\n"
             )
     return user_choice
 

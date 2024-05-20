@@ -26,7 +26,7 @@ def remove_controller(tasks: Any, action: str) -> None:
             .get_task(task_id)
             )
         if task_to_be_removed is not None:
-            if communications.confirm_choice() == "Y":
+            if communications.confirm_choice() == "Yes":
                 (database.DatabaseRemove(database.DB_NAME)
                  .remove_task(task_id))
                 communications.task_removed_successfully()

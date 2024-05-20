@@ -119,11 +119,14 @@ class DatabaseCreate(DatabaseConnector):
                                 '''
         # Convert to string as SQLite date function requires this
         new_task_deadline = str(new_task.deadline.deadline)
+        # Convert to lower to prevent duplicate category names in
+        # different formats (e.g., personal, Personal)
+        new_task_category = new_task.category.name.lower()
 
         self.cursor.execute(create_task_formula,
                             (new_task.title,
                              new_task.description,
-                             new_task.category.name,
+                             new_task_category,
                              new_task_deadline,
                              new_task.priority_id.priority)
                             )
@@ -142,7 +145,7 @@ class DatabaseCreate(DatabaseConnector):
                                 '''
         self.cursor.execute(category_table_formula,
                             (task_id,
-                             new_task.category.name,))
+                             new_task_category))
         self.db.commit()
 
         deadline_table_formula = '''INSERT INTO deadline
@@ -151,7 +154,7 @@ class DatabaseCreate(DatabaseConnector):
                                 '''
         self.cursor.execute(deadline_table_formula,
                             (task_id,
-                             new_task_deadline,)
+                             new_task_deadline)
                             )
         self.db.commit()
 
@@ -161,7 +164,7 @@ class DatabaseCreate(DatabaseConnector):
                                 '''
         self.cursor.execute(priority_table_formula,
                             (task_id,
-                             new_task.priority_id.priority,))
+                             new_task.priority_id.priority))
         self.db.commit()
 
         self.db.close()
@@ -235,11 +238,14 @@ class DatabaseUpdate(DatabaseConnector):
         # Convert to string from datetime.date as SQLite date function
         # requires this
         deadline = str(due_date)
+        # Convert to lower to prevent duplicate category names in
+        # different formats (e.g., personal, Personal)
+        category_lower = category.lower()
 
         self.cursor.execute(update_task_formula,
                             (title,
                              description,
-                             category,
+                             category_lower,
                              deadline,
                              priority,
                              task_id))
@@ -248,7 +254,7 @@ class DatabaseUpdate(DatabaseConnector):
         category_formula = '''UPDATE category SET category_name=?
                             WHERE task_id=?;'''
         self.cursor.execute(category_formula,
-                            (category,
+                            (category_lower,
                              task_id)
                             )
         self.db.commit()

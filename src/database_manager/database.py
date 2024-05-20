@@ -121,12 +121,13 @@ class DatabaseCreate(DatabaseConnector):
         new_task_deadline = str(new_task.deadline.deadline)
         # Convert to lower to prevent duplicate category names in
         # different formats (e.g., personal, Personal)
-        new_task_category = new_task.category.name.lower()
+        # Remove any trailing or leading whitespace
+        new_task_category_name = new_task.category.name.lower().strip()
 
         self.cursor.execute(create_task_formula,
-                            (new_task.title,
-                             new_task.description,
-                             new_task_category,
+                            (new_task.title.strip(),
+                             new_task.description.strip(),
+                             new_task_category_name,
                              new_task_deadline,
                              new_task.priority_id.priority)
                             )
@@ -145,7 +146,7 @@ class DatabaseCreate(DatabaseConnector):
                                 '''
         self.cursor.execute(category_table_formula,
                             (task_id,
-                             new_task_category))
+                             new_task_category_name))
         self.db.commit()
 
         deadline_table_formula = '''INSERT INTO deadline
@@ -259,12 +260,13 @@ class DatabaseUpdate(DatabaseConnector):
         deadline = str(due_date)
         # Convert to lower to prevent duplicate category names in
         # different formats (e.g., personal, Personal)
-        category_lower = category.lower()
+        # Remove any trailing or leading whitespace
+        category_name = category.lower().strip()
 
         self.cursor.execute(update_task_formula,
-                            (title,
-                             description,
-                             category_lower,
+                            (title.strip(),
+                             description.strip(),
+                             category_name,
                              deadline,
                              priority,
                              task_id))
@@ -273,7 +275,7 @@ class DatabaseUpdate(DatabaseConnector):
         category_formula = '''UPDATE category SET category_name=?
                             WHERE task_id=?;'''
         self.cursor.execute(category_formula,
-                            (category_lower,
+                            (category_name,
                              task_id)
                             )
         self.db.commit()

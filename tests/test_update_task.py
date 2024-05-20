@@ -22,7 +22,7 @@ class TestUpdateTask(unittest.TestCase):
         # Task id is 1 as this is the first record which will be created
         # in the database
         self.task_id = 1
-        self.current_date = util.full_date()
+        self.current_date = util.DateUtils().full_date()
         self.date_in_two_weeks_time = (
             self.current_date + datetime.timedelta(weeks=2))
         self.database_name = 'test_task_manager.db'

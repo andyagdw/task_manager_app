@@ -45,7 +45,7 @@ class TestRemoveTask(unittest.TestCase):
             "Coding",
             "Submit task 1",
             "personal",
-            util.full_date(),
+            util.DateUtils().full_date(),
             1
         ])
         # Add to database

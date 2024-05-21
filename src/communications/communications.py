@@ -54,8 +54,8 @@ def confirm_choice() -> str:
     '''
     user_choice = input(
             "Are you sure you want to remove this task? 'Yes' or 'No'\n"
-            "(Please note that tasks cannot be retrieved once deleted)"
-            ":\n"
+            "(Danger Zone: Please note that tasks cannot be retrieved "
+            "once deleted):\n"
             )
     return user_choice
 

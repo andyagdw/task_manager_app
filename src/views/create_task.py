@@ -21,7 +21,7 @@ def get_task_information(task_categories: list,
     user wants to update a task
     '''
     categories_str = (
-        f"\tExisting categories are: {task_categories}\n"
+        f"\Your categories: {task_categories}\n"
         )
     new_task_str = ' new ' if update_current_task is True else ' '
 

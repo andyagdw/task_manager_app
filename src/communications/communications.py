@@ -63,3 +63,33 @@ def confirm_choice() -> str:
 def exit_application() -> None:
     '''Prints to the user to "have a good day"'''
     print("Have a good day👋")
+
+
+def incorrect_priority_level() -> None:
+    '''
+    Informs the user that the priority level they have entered is
+    incorrect
+    '''
+    print(
+        "\nOops🤔. Please enter a priority level that is either "
+        "1, 2, or 3"
+        )
+
+
+def incorrect_deadline() -> None:
+    '''
+    Informs the user that the deadline they have entered is
+    incorrect
+    '''
+    print(
+        "\nOops🤔. Please enter a deadline that starts "
+        "from today onwards"
+        )
+
+
+def no_input(string: str) -> None:
+    '''
+    Informs the user that they did not enter an input
+    The string represents the part where they failed to provide an input
+    '''
+    print(f"Oops🤔. Please enter a task {string}")

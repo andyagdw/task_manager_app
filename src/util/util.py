@@ -7,7 +7,7 @@ class DateUtils():
     '''
     A class used to store date utility methods. It contains three
     methods:
-    
+
     1) ymd_to_datetime_date - Takes in a string in this format
     'YYYY-MM-DD' and converts it into datetime.date
     2) dmy_to_datetime_date - Takes in a string in this format

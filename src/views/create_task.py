@@ -11,7 +11,7 @@ def get_task_information(task_categories: list,
     '''
     Returns a list containing task information (e.g., task title,
     task description) to the controller
-    
+
     Takes in:
     1) task_categories - A list of unique task categories from the
     database, if any

@@ -18,7 +18,7 @@ def view_categories(tasks: Any):
         else:
             categories_dict[category].append(task)
 
-    for category_name, category_tasks in categories_dict.items():
+    for category_name, category_tasks in sorted(categories_dict.items()):
         print(f"\n*********** {category_name.title()} ***********")
         for task in category_tasks:
             task_id, title, _, _, _, _ = task

@@ -1,4 +1,4 @@
-'''A view: Displays tasks grouped according to task priorities'''
+'''Displays tasks grouped according to task priorities'''
 
 from typing import Any
 from util.constants import constants

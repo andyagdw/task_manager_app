@@ -1,7 +1,6 @@
-'''This module contains the models.'''
+'''This module represents the data'''
 
 import datetime
-from typing import Any
 
 
 class Category:
@@ -15,7 +14,6 @@ class Category:
         return f"Category: {self.name}"
 
 
-##########################
 class Priority:
     '''A class to represent a priority level'''
 
@@ -27,7 +25,6 @@ class Priority:
         return f"Priority: {self.priority}"
 
 
-##########################
 class Deadline:
     '''A class to represent a date'''
 
@@ -39,7 +36,6 @@ class Deadline:
         return f"Deadline: {self.deadline}"
 
 
-##########################
 class Task:
     '''A class to represent a task'''
 
@@ -65,21 +61,3 @@ class Task:
             f"{self.deadline}\n"
             f"{self.priority_id}\n"
         )
-
-
-##########################
-def create_task(task_information: list) -> Any:
-    '''
-    Receives task information and creates a new task. It then returns
-    the new task to the controller
-    '''
-    title, description, category, deadline, priority = task_information
-
-    new_task = Task(
-        title,
-        description,
-        Category(category),
-        Deadline(deadline),
-        Priority(priority)
-    )
-    return new_task

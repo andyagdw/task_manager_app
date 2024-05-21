@@ -3,7 +3,7 @@
 import unittest  # Built in testing framework
 import datetime
 from util import util
-from model import model
+from services import services
 from database_manager import database
 
 
@@ -47,7 +47,7 @@ class TestUpdateTask(unittest.TestCase):
         Tests if updating a task is successful
         '''
         # Create task
-        create_task = model.create_task([
+        create_task = services.create_new_task([
             "Coding",
             "Submit task 1",
             "personal",

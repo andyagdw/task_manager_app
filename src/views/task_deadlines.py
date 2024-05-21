@@ -1,4 +1,4 @@
-'''A view: Displays tasks grouped according to task deadlines'''
+'''Displays tasks grouped according to task deadlines'''
 
 from typing import Any
 from datetime import date

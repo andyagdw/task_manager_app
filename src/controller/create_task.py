@@ -1,7 +1,7 @@
 '''Responsible for the CRUD operation: create task'''
 
 from views import create_task
-from model import model
+from services import services
 from communications import communications
 from database_manager import database
 
@@ -17,7 +17,7 @@ def create_controller() -> None:
     except ValueError:
         communications.incorrect_input()
         return None
-    new_task = model.create_task(task_info)
+    new_task = services.create_new_task(task_info)
     database.DatabaseCreate(database.DB_NAME).add_task(new_task)
     communications.task_added()
     return None

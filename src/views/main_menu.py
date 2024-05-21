@@ -1,5 +1,5 @@
 '''
-A view: Displays the main menu where a user can select an option
+Displays the main menu where a user can select an option
 to perform on a task or all the tasks
 '''
 

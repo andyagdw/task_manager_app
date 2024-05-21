@@ -2,7 +2,7 @@
 
 import unittest  # Built in testing framework
 from util import util
-from model import model
+from services import services
 from database_manager import database
 
 
@@ -41,7 +41,7 @@ class TestRemoveTask(unittest.TestCase):
         Tests if task removal is successful
         '''
         # Create task
-        create_task = model.create_task([
+        create_task = services.create_new_task([
             "Coding",
             "Submit task 1",
             "personal",

@@ -1,7 +1,8 @@
 '''
-A view: Displays to the user an interface where they can create
+Displays to the user an interface where they can create
 a task
 '''
+
 from util import util
 
 

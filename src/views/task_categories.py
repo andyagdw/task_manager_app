@@ -1,4 +1,4 @@
-'''A view: Displays tasks grouped according to categories'''
+'''Displays tasks grouped according to categories'''
 
 from typing import Any
 from util.constants import constants

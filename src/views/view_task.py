@@ -1,4 +1,4 @@
-'''A view: Displays a task'''
+'''Displays a task'''
 
 from typing import Any
 from util.constants import constants

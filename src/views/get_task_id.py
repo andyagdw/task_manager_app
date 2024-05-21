@@ -1,5 +1,5 @@
 '''
-A view: Displays to the user a screen where they can enter a task
+Displays to the user an interface where they can enter a task
 id
 '''
 

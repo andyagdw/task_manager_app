@@ -1,8 +1,10 @@
-'''This module contains the main controller (i.e., the start_application
+'''
+This module contains the main controller (i.e., the start_application
 function). It takes in the users choice (an action they would like to
 perform on a task) and sends it to the controller responsible for that
 action
 '''
+
 from controller import (remove_task,
                         update_task,
                         create_task,

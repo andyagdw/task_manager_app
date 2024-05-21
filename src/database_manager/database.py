@@ -1,7 +1,4 @@
-'''
-Database module - contains classes and functions, which interact
-with a database
-'''
+'''Manages database connections and operations'''
 
 import sqlite3
 from typing import Any

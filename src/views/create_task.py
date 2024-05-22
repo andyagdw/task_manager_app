@@ -21,7 +21,7 @@ def get_task_information(task_categories: list,
     user wants to update a task
     '''
     categories_str = (
-        f"\Your categories: {task_categories}\n"
+        f"Your categories: {task_categories}\n"
         )
     new_task_str = ' new ' if update_current_task is True else ' '
 
@@ -91,7 +91,7 @@ def get_task_deadline(new_task_str: str) -> bool | datetime.date:
     '''Gets the task deadline to create a new task'''
     task_date = input(
         f"When is the{new_task_str}deadline (Please enter in this "
-        f"format 'DD-MM-YYYY', as in day-month-year)\n\tNote: "
+        f"format 'DD-MM-YYYY', as in day-month-year)\n- Note: "
         "Please ensure that the deadline entered starts "
         "from today onwards:\n"
         )

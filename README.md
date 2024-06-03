@@ -1,6 +1,6 @@
 # Task Manager Application 💥
 
-A Python-based Task Manager application employing the
+A Python-based Task Manager Application employing the
 'Model-View-Controller' pattern 😁. It facilitates users to
 effortlessly create, update, remove, or view tasks, deadlines,
 priorities, and categories.

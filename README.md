@@ -25,7 +25,7 @@ Follow these simple steps to get started with the Task Manager Application:
    `cd task_manager_app`
 3. Open Visual Studio Code <br />
    `code .`
-4. Set up a virtual environment in Visual Studio Code terminal. Make sure you are in the project directory. <br />
+4. Set up a virtual environment in Visual Studio Code terminal. Make sure you are in the project directory <br />
 
    Using venv:
 
@@ -68,21 +68,20 @@ Follow these simple steps to get started with the Task Manager Application:
 7. In the project directory, run the main script using: <br />
    `python src\main.py`
 
+You're all set! Start managing your tasks efficiently with the Task Manager Application 🚀.
+
 ## Accessing the Database 📊
 
-To delve into the database, I highly recommend utilising DB Browser for its exceptional quality and
-user-friendly visual interface. Plus, its free! 
+If you would like to delve into the database: 
 
 1. Download DB Browser: <br />
-   If you haven't already, download and install [DB Browser for SQLite](https://sqlitebrowser.org/dl/).
+   [DB Browser for SQLite](https://sqlitebrowser.org/dl/).
 
 2. Open database with DB Browser: <br />
    Locate and open the database file using the 'Open Database' option in the File menu - it should be inside the project directory.
 
 3. Explore the Database <br />
    Once the database is opened, you can browse through the tables and data using the intuitive interface of DB Browser 😁.
-
-You're all set! Start managing your tasks efficiently with the Task Manager Application. 🚀
 
 ## Credits
 ### Contact

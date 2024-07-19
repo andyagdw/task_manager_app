@@ -19,13 +19,13 @@ priorities, and categories.
 
 Follow these simple steps to get started with the Task Manager Application:
 
-1. Clone the repository to your local machine <br />
+1. Clone the repository to your local machine: <br />
    `git clone https://github.com/andyagdw/task_manager_app.git`
-2. Navigate to the project directory <br />
+2. Navigate to the project directory: <br />
    `cd task_manager_app`
-3. Open Visual Studio Code <br />
+3. Open Visual Studio Code: <br />
    `code .`
-4. Set up a virtual environment in Visual Studio Code terminal. Make sure you are in the project directory <br />
+4. Set up a virtual environment: <br />
 
    Using venv:
 
@@ -40,7 +40,7 @@ Follow these simple steps to get started with the Task Manager Application:
    virtualenv venv
    ```
 
-5. Activate the virtual environment
+5. Activate the virtual environment:
 
    Using venv:
 

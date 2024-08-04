@@ -19,6 +19,9 @@ priorities, and categories.
 
 Follow these simple steps to get started with the Task Manager Application:
 
+### Prerequisite
+- Ensure that Python is installed on your machine
+
 1. Clone the repository to your local machine: <br />
    `git clone https://github.com/andyagdw/task_manager_app.git`
 2. Navigate to the project directory: <br />

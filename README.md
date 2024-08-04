@@ -23,49 +23,7 @@ Follow these simple steps to get started with the Task Manager Application:
    `git clone https://github.com/andyagdw/task_manager_app.git`
 2. Navigate to the project directory: <br />
    `cd task_manager_app`
-3. Open Visual Studio Code: <br />
-   `code .`
-4. Set up a virtual environment: <br />
-
-   Using venv:
-
-   `python -m venv venv` <br />
-   For Python 3.3 or newer: <br />
-   `python3 -m venv venv`
-
-   Using virtualenv:
-
-   ```
-   pip install virtualenv
-   virtualenv venv
-   ```
-
-5. Activate the virtual environment:
-
-   Using venv:
-
-   Windows: <br />
-   `venv\Scripts\activate` <br />
-   Unix\Mac: <br />
-   `source venv/bin/activate`
-
-   Using virtualenv: <br />
-
-   Windows: <br />
-   `venv\Scripts\activate` <br />
-   Unix\Mac: <br />
-   `source venv/bin/activate`
-
-6. Ensure project dependencies are installed: <br />
-
-```
-- flake8==7.0.0
-- mccabe==0.7.0
-- pycodestyle==2.11.1
-- pyflakes==3.2.0
-```
-
-7. In the project directory, run the main script using: <br />
+3. Run the main script: <br />
    `python src\main.py`
 
 You're all set! Start managing your tasks efficiently with the Task Manager Application 🚀.

@@ -64,7 +64,7 @@ def get_task_title(new_task_str: str) -> None | str:
 def get_task_description(new_task_str: str) -> None | str:
     '''Gets the task description to create a new task'''
     task_description = input(
-        f"What is the{new_task_str}task description:\n"
+        f"\nWhat is the{new_task_str}task description:\n"
         )
     if not task_description:
         description_str = 'description'
@@ -77,7 +77,7 @@ def get_task_category(categories_str: str,
                       task_categories: list) -> None | str:
     '''Gets the task category to create a new task'''
     task_category = input(
-        "What category do you want to put this task in" +
+        "\nWhat category do you want to put this task in" +
         (":\n" + categories_str if task_categories else ":\n")
         )
     if not task_category:
@@ -90,7 +90,7 @@ def get_task_category(categories_str: str,
 def get_task_deadline(new_task_str: str) -> bool | datetime.date:
     '''Gets the task deadline to create a new task'''
     task_date = input(
-        f"When is the{new_task_str}deadline (Please enter in this "
+        f"\nWhen is the{new_task_str}deadline (Please enter in this "
         f"format 'DD-MM-YYYY', as in day-month-year)\n- Note: "
         "Please ensure that the deadline entered starts "
         "from today onwards:\n"
@@ -105,7 +105,7 @@ def get_task_deadline(new_task_str: str) -> bool | datetime.date:
 def get_task_priority(new_task_str: str) -> bool | int:
     '''Gets the task priority to create a new task'''
     task_priority = int(input(
-        f"What is the{new_task_str}priority level"
+        f"\nWhat is the{new_task_str}priority level"
         "\n(1 = High Priority, "
         "2 = Medium Priority, "
         "3 = Low Priority):\n")
